@@ -6,7 +6,7 @@ services:
     image: postgres:13.5-alpine
     restart: unless-stopped
     networks:
-      - red
+      - red-analitica
     environment:
       POSTGRES_DB: ${BD_NOMBRE}
       POSTGRES_USER: ${BD_USUARIO}
@@ -17,10 +17,10 @@ services:
   
   umami:
     container_name: analitica-app
-    image: ghcr.io/mikecao/umami:postgresql-latest
+    image: ghcr.io/umami-software/umami:postgresql-latest
     restart: unless-stopped
     networks:
-      - red
+      - red-analitica
     ports:
       - ${PUERTO}:3000
     depends_on:
@@ -31,4 +31,4 @@ services:
       HASH_SALT: ${SALT}
       BASE_PATH: '/analitica'
 networks:
-  red:
+  red-analitica:

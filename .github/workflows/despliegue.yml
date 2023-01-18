@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: 🦅 Actualizar aplicación
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.DOMINIO }}
           username: ${{ secrets.USUARIO }}
@@ -20,4 +20,4 @@ jobs:
             git pull
             docker compose down
             docker compose pull umami
-            docker compose up -d
+            docker compose up --force-recreate -d
