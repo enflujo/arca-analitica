@@ -29,6 +29,5 @@ services:
       DATABASE_URL: postgresql://${BD_USUARIO}:${BD_CLAVE}@bd:5432/${BD_NOMBRE}
       DATABASE_TYPE: postgresql
       HASH_SALT: ${SALT}
-      BASE_PATH: '/analitica'
 networks:
   red-analitica:
