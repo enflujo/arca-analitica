@@ -28,7 +28,7 @@ services:
     ports:
       - ${PUERTO}:3000
     depends_on:
-      db:
+      bd:
         condition: service_healthy
     environment:
       DATABASE_URL: postgresql://${BD_USUARIO}:${BD_CLAVE}@bd:5432/${BD_NOMBRE}
